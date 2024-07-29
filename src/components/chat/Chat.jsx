@@ -29,7 +29,61 @@ const Chat = () => {
           <img src="./info.png" alt="" />
         </div>
       </div>
-      <div className="center"></div>
+      <div className="center">
+        <div className="messsage">
+          <img src="./avatar.png" alt="" />
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage own own">
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage">
+          <img src="./avatar.png" alt="" />
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage own">
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage">
+          <img src="./avatar.png" alt="" />
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage own">
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage">
+          <img src="./avatar.png" alt="" />
+          <div className="texts">
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="messsage own">
+          <div className="texts">
+            <img src="https://img.freepik.com/free-photo/abstract-background-light-steel-blue-wallpaper-image_53876-102530.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722211200&semt=ais_user" alt="" />
+            <p>hi how are you</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+      </div>
       <div className="bottom">
         <div className="icons">
           <img src="./img.png" alt="" />
