@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Chat.css"
 import EmojiPicker from 'emoji-picker-react'
 
@@ -6,6 +6,12 @@ const Chat = () => {
 
   const [open, setOPen] = useState(false);
   const [text, setText] = useState("");
+
+  const endRef = useRef(null);
+
+  useEffect(()=>{
+    endRef.current?.scrollIntoView({behavior: "smooth"});
+  })
 
   
   const handleEmoji = (e) =>{
@@ -33,56 +39,57 @@ const Chat = () => {
         <div className="messsage">
           <img src="./avatar.png" alt="" />
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage own own">
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage">
           <img src="./avatar.png" alt="" />
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage own">
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage">
           <img src="./avatar.png" alt="" />
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage own">
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage">
           <img src="./avatar.png" alt="" />
           <div className="texts">
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="messsage own">
           <div className="texts">
             <img src="https://img.freepik.com/free-photo/abstract-background-light-steel-blue-wallpaper-image_53876-102530.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722211200&semt=ais_user" alt="" />
-            <p>hi how are you</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, non voluptates quos similique amet pariatur maxime. Nulla, nisi obcaecati laboriosam totam fugiat, doloremque ducimus quos commodi necessitatibus, eveniet nam reprehenderit?</p>
             <span>1 min ago</span>
           </div>
         </div>
+        <div ref={endRef}></div>
       </div>
       <div className="bottom">
         <div className="icons">
