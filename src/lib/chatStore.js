@@ -6,7 +6,7 @@ import { useUserStore } from "./userStore";
     chatId: null,
     user: null,
     isCurrentUserBlocked: false,
-    isreceiverBlocked: false,
+    isReceiverBlocked: false,
     changeChat: (chatId, user)=>{
         const currentUser = useUserStore.getState().currentUser;
 
@@ -15,7 +15,7 @@ import { useUserStore } from "./userStore";
                 chatId,
                 user: null,
                 isCurrentUserBlocked: true,
-                isreceiverBlocked: false,
+                isReceiverBlocked: false,
             })
         }
 
@@ -24,7 +24,7 @@ import { useUserStore } from "./userStore";
                 chatId,
                 user: user,
                 isCurrentUserBlocked: false,
-                isreceiverBlocked: true,
+                isReceiverBlocked: true,
             })
         }
         else{
@@ -32,11 +32,11 @@ import { useUserStore } from "./userStore";
                 chatId,
                 user,
                 isCurrentUserBlocked: false,
-                isreceiverBlocked: false,
+                isReceiverBlocked: false,
             })
         }
     },
     changeBlock: ()=>{
-        set((state)=>({...state, isreceiverBlocked: !state.isreceiverBlocked}));
+        set((state)=>({...state, isReceiverBlocked: !state.isReceiverBlocked}));
     }
     }));

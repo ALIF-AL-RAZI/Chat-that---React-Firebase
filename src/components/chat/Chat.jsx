@@ -14,7 +14,7 @@ const Chat = () => {
   const [chat, setChat] = useState();
   const [img, setImg] = useState({file:null, url: "",});
 
-  const {chatId, user} = useChatStore();
+  const {chatId, user , isCurrentUserBlocked, isReceiverBlocked} = useChatStore();
   const {currentUser} = useUserStore();
 
   const endRef = useRef(null);
@@ -104,9 +104,9 @@ const Chat = () => {
     <div className='chat'>
       <div className="top">
         <div className="user">
-          <img src="./avatar.png" alt="" />
+          <img src={user?.avatar||"./avatar.png"} alt="" />
           <div className="texts">
-            <span>Alif</span>
+            <span>{user?.username}</span>
             <p>Lorem ipsum dolor</p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Chat = () => {
       </div>
       <div className="center">
         {chat?.messages?.map((message)=>(
-          <div className={message.senderId === currentUser?.id?"messsage own": "message"} key={message?.createAt}>
+          <div className={message.senderId === currentUser?.id?"message own": "message"} key={message?.createAt}>
           <div className="texts">
             {message.img && <img src={message.img} alt="" />}
             <p>{message.text}</p>
@@ -129,7 +129,7 @@ const Chat = () => {
         
         {img.url && (
           <div className="message own">
-            <div className="text">
+            <div className="texts">
               <img src={img.url} alt="" />
             </div>
           </div>
@@ -150,9 +150,10 @@ const Chat = () => {
         </div>
         <input 
           type="text" 
-          placeholder='Type a message...' 
+          placeholder={isCurrentUserBlocked||isReceiverBlocked?'You can not send message':'Type a message...'} 
           value={text} 
           onChange={(e)=>setText(e.target.value)}
+          disabled={isCurrentUserBlocked||isReceiverBlocked}
         />
         <div className="emoji">
           <img src="./emoji.png" alt="" onClick={()=>setOPen((prev)=>!prev)}/>
@@ -161,7 +162,7 @@ const Chat = () => {
           </div>
           
         </div>
-        <button className='sendButton' onClick={handleSend}>Send</button>
+        <button className='sendButton' onClick={handleSend} disabled={isCurrentUserBlocked||isReceiverBlocked}>Send</button>
       </div>
     </div>
   )
